@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ComfyUI Veo 3 Experimental - Generación de Videos con IA</title>
+    <meta name="description" content="Extensión de ComfyUI para generación de videos de alta calidad usando Google Veo 3. Crea videos increíbles con inteligencia artificial.">
+    <meta name="keywords" content="comfyui, veo3, google, ai, video-generation, text-to-video, inteligencia artificial, generación de videos">
+    <meta name="author" content="ComfyUI Veo 3 Team">
+    <meta property="og:title" content="ComfyUI Veo 3 Experimental">
+    <meta property="og:description" content="Genera videos de alta calidad con Google Veo 3 en ComfyUI">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/ComfyUI-Veo3-Experimental/">
+    <meta property="og:image" content="https://yourusername.github.io/ComfyUI-Veo3-Experimental/preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ComfyUI Veo 3 Experimental">
+    <meta name="twitter:description" content="Genera videos de alta calidad con Google Veo 3 en ComfyUI">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .download-section {
+            text-align: center;
+            background: #667eea;
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .download-btn:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .installation {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .installation h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .installation ol {
+            padding-left: 20px;
+        }
+        
+        .installation li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 ComfyUI Veo 3 Experimental</h1>
+            <p>Genera videos de alta calidad con la última tecnología de Google Veo 3 en ComfyUI</p>
+        </div>
+        
+        <div class="main-content">
+            <h2>🚀 ¿Qué es Veo 3?</h2>
+            <p>Veo 3 es el modelo más avanzado de Google para generación de videos con inteligencia artificial. Esta extensión te permite integrar esta tecnología directamente en ComfyUI, permitiéndote crear videos increíbles a partir de descripciones de texto.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🎯 Generación de Texto a Video</h3>
+                    <p>Crea videos de hasta 8 segundos de duración usando solo descripciones de texto. Veo 3 entiende el contexto y genera movimientos fluidos y naturales.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>📐 Múltiples Aspectos</h3>
+                    <p>Soporte para formatos 16:9 (horizontal) y 9:16 (vertical), perfecto para diferentes plataformas y usos.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>⚡ Alta Calidad</h3>
+                    <p>Videos en resolución 720p a 24 fps con calidad cinematográfica y detalles increíbles.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🔧 Integración Perfecta</h3>
+                    <p>Nodos especializados para ComfyUI que se integran perfectamente con tu flujo de trabajo existente.</p>
+                </div>
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ Importante:</strong> Esta función puede no estar disponible en todos los países. Google puede cobrar $0.35 por segundo de video generado.
+            </div>
+        </div>
+        
+        <div class="download-section">
+            <h2>📥 Descarga Ahora</h2>
+            <p>Obtén la extensión más reciente con soporte completo para Veo 3</p>
+            <a href="https://github.com/yourusername/ComfyUI-Veo3-Experimental/archive/refs/heads/main.zip" class="download-btn">
+                📦 Descargar ZIP
+            </a>
+        </div>
+        
+        <div class="main-content">
+            <div class="installation">
+                <h2>🔧 Instalación</h2>
+                <ol>
+                    <li><strong>Descarga</strong> el archivo ZIP desde el botón de arriba</li>
+                    <li><strong>Extrae</strong> el contenido en tu carpeta <code>ComfyUI/custom_nodes/</code></li>
+                    <li><strong>Instala las dependencias</strong> ejecutando:</li>
+                </ol>
+                <div class="code">pip install -r requirements.txt</div>
+                <ol start="4">
+                    <li><strong>Configura tu API key</strong> de Google en un archivo <code>.env</code>:</li>
+                </ol>
+                <div class="code">GOOGLE_API_KEY=tu_api_key_aqui</div>
+                <ol start="5">
+                    <li><strong>Reinicia ComfyUI</strong> y disfruta de la generación de videos con Veo 3</li>
+                </ol>
+            </div>
+            
+            <h2>🎮 Cómo Usar</h2>
+            <p>Una vez instalado, encontrarás nuevos nodos en ComfyUI:</p>
+            <ul>
+                <li><strong>Veo 3 Text to Video:</strong> Genera videos a partir de descripciones de texto</li>
+                <li><strong>Veo 3 Video Saver:</strong> Guarda y previsualiza los videos generados</li>
+                <li><strong>Veo 3 to VHS:</strong> Convierte videos para procesamiento adicional</li>
+            </ul>
+            
+            <h2>🔑 Obtener API Key</h2>
+            <p>Para usar Veo 3, necesitas una API key de Google:</p>
+            <ol>
+                <li>Ve a <a href="https://aistudio.google.com/prompts/new_chat" target="_blank">Google AI Studio</a></li>
+                <li>Inicia sesión con tu cuenta de Google</li>
+                <li>Haz clic en "Get API key" o ve a configuración</li>
+                <li>Crea una nueva API key</li>
+                <li>Copia la key y añádela a tu archivo <code>.env</code></li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            <div class="social-links">
+                <a href="https://github.com/yourusername/ComfyUI-Veo3-Experimental" target="_blank">📚 GitHub</a>
+                <a href="https://github.com/yourusername/ComfyUI-Veo3-Experimental/issues" target="_blank">🐛 Reportar Bug</a>
+                <a href="https://github.com/yourusername/ComfyUI-Veo3-Experimental/discussions" target="_blank">💬 Discusiones</a>
+            </div>
+            <p>&copy; 2024 ComfyUI Veo 3 Experimental. Creado con ❤️ para la comunidad de IA.</p>
+        </div>
+    </div>
+</body>
+</html> 

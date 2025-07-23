@@ -1,0 +1,43 @@
+{
+  "project_name": "ComfyUI-Veo3-Experimental",
+  "version": "3.0.0",
+  "description": "ComfyUI extension for Google's Veo 3 text-to-video generation",
+  "deployment": {
+    "platform": "github",
+    "repository": "yourusername/ComfyUI-Veo3-Experimental",
+    "branch": "main",
+    "auto_deploy": true
+  },
+  "requirements": {
+    "python_version": ">=3.8",
+    "comfyui_version": "latest",
+    "dependencies": [
+      "google-genai>=0.3.0",
+      "opencv-python>=4.8.0",
+      "Pillow>=10.0.0",
+      "torch>=2.0.0",
+      "numpy>=1.24.0"
+    ]
+  },
+  "features": {
+    "veo3_text_to_video": true,
+    "veo3_image_to_video": false,
+    "veo3_video_preview": true,
+    "veo3_to_vhs": true,
+    "rate_limiting": true,
+    "error_handling": true
+  },
+  "api_config": {
+    "model": "veo-3.0-generate-001",
+    "max_duration": 8,
+    "supported_aspect_ratios": ["16:9", "9:16"],
+    "person_generation_options": ["dont_allow", "allow_adult"]
+  },
+  "web_config": {
+    "title": "ComfyUI Veo 3 Experimental",
+    "description": "Generate high-quality videos with Google's Veo 3 model",
+    "keywords": ["comfyui", "veo3", "google", "ai", "video-generation"],
+    "author": "Your Name",
+    "license": "MIT"
+  }
+} 

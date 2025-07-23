@@ -1,0 +1,40 @@
+{
+  "name": "comfyui-veo3-experimental",
+  "version": "3.0.0",
+  "description": "ComfyUI extension for Google's Veo 3 text-to-video generation",
+  "main": "__init__.py",
+  "scripts": {
+    "install": "pip install -r requirements.txt",
+    "test": "python -c \"import veo_api; print('Veo 3 API module imported successfully')\"",
+    "build": "echo 'Building ComfyUI Veo 3 extension...'",
+    "deploy": "echo 'Deploying to web...'"
+  },
+  "keywords": [
+    "comfyui",
+    "veo3",
+    "google",
+    "ai",
+    "video-generation",
+    "text-to-video"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ComfyUI-Veo3-Experimental.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ComfyUI-Veo3-Experimental/issues"
+  },
+  "homepage": "https://github.com/yourusername/ComfyUI-Veo3-Experimental#readme",
+  "dependencies": {
+    "google-genai": ">=0.3.0",
+    "opencv-python": ">=4.8.0",
+    "Pillow": ">=10.0.0",
+    "torch": ">=2.0.0",
+    "numpy": ">=1.24.0"
+  },
+  "engines": {
+    "python": ">=3.8"
+  }
+} 
