@@ -1,0 +1,37 @@
+[project]
+name = "veo3-experimental"
+description = "A custom node extension for ComfyUI that integrates Google's Veo 3 text-to-video generation capabilities."
+version = "1.0.0"
+license = {file = "LICENSE"} 
+# classifiers = [
+#     # For OS-independent nodes (works on all operating systems)
+#     "Operating System :: OS Independent",
+#
+#     # OR for OS-specific nodes, specify the supported systems:
+#     "Operating System :: Microsoft :: Windows",  # Windows specific
+#     "Operating System :: POSIX :: Linux",  # Linux specific
+#     "Operating System :: MacOS",  # macOS specific
+#
+#     # GPU Accelerator support. Pick the ones that are supported by your extension.
+#     "Environment :: GPU :: NVIDIA CUDA",    # NVIDIA CUDA support
+#     "Environment :: GPU :: AMD ROCm",       # AMD ROCm support
+#     "Environment :: GPU :: Intel Arc",      # Intel Arc support
+#     "Environment :: NPU :: Huawei Ascend",  # Huawei Ascend support
+#     "Environment :: GPU :: Apple Metal",    # Apple Metal support
+# ]
+
+dependencies = ["google-genai>=0.3.0", "opencv-python>=4.8.0", "Pillow>=10.0.0", "torch>=2.0.0", "numpy>=1.24.0", "gradio>=4.0.0"]
+
+[project.urls]
+Repository = "https://github.com/cuban044/ComfyUI-Veo3-Experimental"
+#  Used by Comfy Registry https://registry.comfy.org
+Documentation = "https://github.com/cuban044/ComfyUI-Veo3-Experimental/wiki"
+"Bug Tracker" = "https://github.com/cuban044/ComfyUI-Veo3-Experimental/issues"
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-Veo3-Experimental"
+Icon = ""
+includes = [] 
+# "requires-comfyui" = ">=1.0.0"  # ComfyUI version compatibility
+
